@@ -1,0 +1,483 @@
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, samp, small, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+a, ins, del { text-decoration: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+th, td { vertical-align: top; }
+th { text-align: left; }
+ol, li { list-style: none; }
+article, aside, figure, footer, header, hgroup, nav, section { display: block; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+body {
+    background: #58595b url(../images/bg.jpg) no-repeat center top fixed;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #c5c5c5;
+    cursor: default;
+    overflow-y: scroll;
+}
+
+.ie7 body {
+    overflow: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#wrapper .distantplace {
+    display: block;
+    width: 201px;
+    height: 250px;
+    text-indent: -1000em;
+    overflow: hidden;
+    background: url(../images/slider-text.png) no-repeat;
+    background-position: right top;
+	z-index:9;
+}
+
+#top {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#top h2,
+#top h2 a,
+#top h2 span {
+    width: 206px;
+    height: 50px;
+    text-indent: -1000em;
+    overflow: hidden;
+    float: right;
+    margin: 22px 11px 0 0;
+    position: relative;
+    display: block;
+}
+
+#top h2 a {
+    display: block;
+    margin: 0;
+    background: url(../images/logo.png) no-repeat;
+    float: none;
+}
+
+#top h2 a,
+#top h2 span {
+    position: absolute;
+}
+
+#top h2 span {
+    text-indent: 0;
+    font-size: 10px;
+    color: #fff;
+    margin: 0;
+    font-weight: normal;
+    line-height: 11px;
+}
+
+#top h2 span strong {
+    display: block;
+}
+
+#menu {
+    margin: 46px 0 15px 33px;
+}
+
+#menu li {
+    display: inline;
+    margin-left: -2px;
+}
+
+#menu a {
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    line-height: normal;
+    color: #fff;
+    padding: 5px 15px;
+}
+
+#menu a:hover,
+#menu .selected a {
+    background: rgba(185, 184, 177, 0.4);
+}
+
+.ie #menu a:hover,
+.ie #menu .selected a {
+    background: url(../images/menu.png) repeat;
+}
+
+#slider {
+    white-space: nowrap;
+    font-size: 0;
+    position: relative;
+    height: 540px;
+    width: 100%;
+    padding: 21px 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.ie #slider .images {
+    z-index: 1;
+    position: relative;
+}
+
+#slider.small {
+    height: 427px;
+}
+
+#slider > h2 {
+    position: absolute;
+    left: 50%;
+    bottom: 29px;
+    margin-left: 248px;
+}
+
+#slider .prev,
+#slider .next {
+    display: block;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+.ie #slider .prev,
+.ie #slider .next {
+    background: url(data:image/gif;base64,AAAA);
+}
+
+#slider .prev {
+    left: 0;
+}
+
+#slider .next {
+    right: 0;
+}
+
+#slider.small .prev,
+#slider.small .next {
+    cursor: default;
+}
+
+#slider .prev span,
+#slider .next span {
+    text-indent: -1000em;
+    width: 51px;
+    height: 51px;
+    top: 120px;
+    overflow: hidden;
+    position: absolute;
+    display: none;
+}
+
+#slider .prev:hover span,
+#slider .next:hover span {
+    display: block;
+}
+
+#slider .prev span {
+    background: url(../images/prev.png) no-repeat;
+    left: 60px;
+}
+
+#slider .next span {
+    background: url(../images/next.png) no-repeat;
+    right: 60px;
+}
+
+#preview {
+    width: 100%;
+    height: 540px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 10;
+    padding: 21px 0;
+}
+
+.ie #preview {
+    background: url(../images/mask.png) repeat;
+}
+
+#preview .content {
+    position: absolute;
+    left: 50%;
+    margin-left: -490px;
+}
+
+#preview .text {
+    overflow: hidden;
+    float: left;
+    margin-top: 327px;
+}
+
+#preview img {
+    margin-right: 50px;
+    float: left;
+}
+
+#preview span,
+#preview h2,
+#preview cite,
+#preview .info {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-style: normal;
+}
+
+#preview span {
+    font-size: 29px;
+}
+
+#preview h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #58595b;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+#preview cite {
+    font-size: 19px;
+}
+
+#preview .info {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    max-width: 440px;
+    white-space: normal;
+}
+
+#preview .close {
+    width: 40px;
+    height: 36px;
+    display: block;
+    text-indent: -1000em;
+    overflow: hidden;
+    background: url(../images/close-preview.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    margin-left: 403px;
+    top: 40px;
+}
+
+#content {
+    width: 980px;
+    margin: 6px auto 0;
+    overflow: hidden;
+}
+
+#content .sputnik-bg {
+	background:url(../images/sputnik_logo.png) top right no-repeat;
+}
+
+#content .small-info {
+	font-size: 9px;
+	line-height:normal;
+}
+
+#news {
+    margin-left: -10px;
+}
+
+.news {
+    border: solid 1px #fff;
+    padding: 15px 19px 19px;
+    width: 445px;
+    float: left;
+    margin: 0 0 9px 10px;
+}
+
+.ie7 .news {
+    margin-left: 5px;
+}
+
+.news h3:before,
+.news h3 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.news h3 {
+    margin: 0 0 9px;
+}
+
+.news h3:before {
+    content: "= ";
+}
+
+.news p {
+    line-height: 13px;
+}
+
+#page {
+    overflow: hidden;
+    margin: 14px 0 9px;
+}
+
+#page h2 {
+    float: right;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: normal;
+    background: url(../images/page-header.png) no-repeat;
+    height: 140px;
+    padding-left: 19px;
+    width: 242px;
+    margin-left: 40px;
+}
+
+#page h2 img {
+	width:95px;
+	height:44px;
+	border:none;
+	display:block;
+}
+
+#page h2 .line {
+	height:15px;
+}
+
+#page .page {
+    overflow: hidden;
+    font-size: 12px;
+    padding-left: 16px;
+    line-height: 16px;
+}
+
+#page p {
+    margin-bottom: 15px;
+}
+
+#page p strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+#page .distantplace {
+    margin-right: 41px;
+}
+
+#bigpage {
+    background: url(../images/bigpage-bg.png) repeat-x;
+    margin-top: 14px;
+    padding: 24px 23px 0px 19px;
+}
+
+#bigpage h2 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 19px;
+}
+
+#bigpage .bigpage {
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+#bigpage p {
+    margin-bottom: 17px;
+}
+
+#bigpage.publikacja p {
+    width: 654px;
+}
+
+#bigpage img {
+    margin: 10px 22px 0 0;
+}
+
+#bigpage .left,
+#bigpage .right {
+    width: 442px;
+}
+
+#bigpage h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#bottom {
+    width: 922px;
+    margin: 36px auto 49px;
+    overflow: hidden;
+}
+
+#bottom h4 {
+    font-size: 11px;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 7px;
+}
+
+#bottom li {
+    float: left;
+    margin-right: 90px;
+}
+
+#bottom .right li {
+    margin: 0;
+}
+
+#bottom li a {
+    display: block;
+    height: 55px;
+    text-indent: -1000em;
+    overflow: hidden;
+}
+
+#bottom li.warsaw a {
+    width: 164px;
+    background: url(../images/warsaw.png) no-repeat;
+}
+
+#bottom li.men a {
+    width: 100px;
+    background: url(../images/men.png) no-repeat;
+}
+
+#bottom li.mnisw a {
+    width: 208px;
+    background: url(../images/mnisw.png) no-repeat;
+}
+
+
+#bottom li.samsung a {
+    width: 120px;
+    background: url(../images/samsung.png) no-repeat;
+}
+
+
+a.file,
+a.file:visited {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+
+a.file:hover {
+	text-decoration:none;
+}
